@@ -1,0 +1,25 @@
+$black :#000000;
+$white: #ffffff;
+$bg-floralwhite: #FFFBF1;
+$border-grey:#C9C9C9;
+$lightgrey:#999999;
+$secondary-color:#3F4E4F;
+
+//Fonts
+
+$newYork: 'NewYork', sans-serif;
+$futura: 'Futura',sans-serif;
+$futuraBold: 'FuturaBold',sans-serif;
+
+/* media queries breakpoints*/ 
+$container-breakpoints: (
+    xs: 0,
+    sm: 544px,
+    md: 769px,
+    lg: 992px,
+    th: 1025px,
+    xl: 1200px,
+    xxl: 1440px,
+    xxxl: 1560px
+) !default;
+

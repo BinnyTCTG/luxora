@@ -1,0 +1,180 @@
+@use './variables' as *;
+@use 'mixins';
+*{  
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color:$bg-floralwhite;
+}
+.logo-img {
+    flex: 1;
+    justify-self: center;
+    text-align: center;
+    &::before{
+        content: url('../icons/luxora.svg');
+        display: block;
+    }
+}
+
+li, a, button {
+    font-family: $futura;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: black;
+    text-decoration: none;
+}
+header {
+    .navbar {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 34px 62px;
+        height: 100px;
+        position: fixed;
+        top:0;
+        width: 100%;
+        z-index: 1;
+        nav.navbar-menu {
+            flex: 1;
+            ul {
+                display: flex;
+                gap: 32px;
+            }
+        }
+    }
+}
+
+.search-icon {
+    &::before {
+        content: url('../icons/search-icon.svg');
+        display: block;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.user-icon {
+    &::before {
+        content: url('../icons/user-icon.svg');
+        display: block;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.shopping-icon {
+    &::before {
+        content: url('../icons/shopping-icon.svg');
+        display: block;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.navbar-right {
+    flex: 1;
+    justify-content: end;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.line-divider {
+    color:$border-grey;
+}
+
+.bg_blur {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40px);
+}
+@media screen and (min-width: 992px) {
+    .navbar-icon {
+        display: none;
+    }
+    .navbar-bottom {
+        display: none;
+    }
+}
+@media screen and (max-width: 991px) {
+    header {
+        .navbar {
+            padding: 30px 32px;
+            height: auto;
+            nav.navbar-menu, .navbar-right .user-icon, .navbar-right .search-icon,.navbar-bottom{
+                visibility: hidden;
+                position: fixed;
+            }
+            .navbar-icon {
+                flex: 1;
+                &::before {
+                    content: url('../icons/humburger.svg');
+                }
+            }
+            .navbar-icon.active{
+                z-index: 1;
+                &::before {
+                    content: url('../icons/close-icon.svg');
+                    width: 28px;
+                    height: 28px;
+                    display: block;
+                }
+            }
+            .navbar-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #FFFBF1;
+                transition: transform .5s ease;
+                transform: translateX(-100%);
+                &.active {
+                    visibility: visible;
+                    transform: translateX(0);
+                }
+            }
+            nav.navbar-menu.active ul {
+                flex-direction: column;
+                justify-content: center;
+                padding: 80px 30px;
+            }
+            nav.navbar-menu.active 
+            +.logo-img {
+                &::before {
+                    display: none;
+                }
+            }
+
+            .navbar-bottom.active {
+                    visibility: visible;
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    justify-content: space-between;
+                    display: flex;
+                    padding: 30px 0;
+                    margin: 0 30px;
+                    border-top: 2px solid #C9C9C9;
+                    a {
+                        display: flex;
+                        gap: 14px;
+                    }
+                    .line-divider {
+                        border: 2px solid #C9C9C9;
+                    }
+                }
+            
+            +.navbar-right .shopping-icon {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
