@@ -1,0 +1,17 @@
+@use 'variables';
+
+@mixin flex-center($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font-style($size: '20', $fontWeight: bold, $lineHeight: '20') {
+    font-size: $size;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}
+
+%link-style {
+    text-decoration: none;
+}
