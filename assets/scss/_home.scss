@@ -55,7 +55,7 @@ $animationSpeed: 10000ms;
     margin: 56px 60px;
     overflow: hidden;
     @media screen and (max-width: 991px) {
-        padding: 56px 30px;
+        padding: 56px 0;
     }
     .about-heading {
         padding-bottom: 48px;
@@ -87,6 +87,15 @@ $animationSpeed: 10000ms;
             font-size: 16px;
             line-height: 22px;
             font-weight: 400;
+        }
+    }
+    @media (max-width: 992px) {
+        .image-text-overlay {
+            .overlay {
+                padding: 20px 22px;
+                margin: 0;
+                width: 85%;
+            }
         }
     }
     @media (max-width: 768px) {

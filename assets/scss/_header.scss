@@ -43,6 +43,7 @@ header {
             ul {
                 display: flex;
                 gap: 32px;
+                margin: 54px 0;
             }
         }
     }
@@ -142,6 +143,10 @@ header {
                 flex-direction: column;
                 justify-content: center;
                 padding: 80px 30px;
+                background-color: #FFFBF1;
+                max-height: calc(100vh - 150px);
+                overflow: auto;
+                gap: 20px;
             }
             nav.navbar-menu.active 
             +.logo-img {

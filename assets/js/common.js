@@ -3,7 +3,6 @@ $(window).scroll(function() {
     if(!$(".navbar-menu").hasClass("active") && height > 0){
       $('.navbar').removeClass('bg_blur');
       if(height > 100) {
-        console.log('Hello World== '+ height);
         $('.navbar').addClass('bg_blur');
       } else {
           $('.navbar').removeClass('bg_blur');
