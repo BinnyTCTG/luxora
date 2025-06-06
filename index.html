@@ -141,7 +141,12 @@
             </div>
         </section>
         <section class="hero-banner-1">
-            <img src="assets/images/hero-banner.png" alt="">
+            <picture>
+            <source srcset="assets/images/hero-banner_m.png" media="(max-width: 768px)">
+            <source srcset="assets/images/hero-banner.png" media="(max-width: 1512px)">
+            <img style="width: 100%;" src="assets/images/hero-banner.png" alt="Example Image">
+            </picture>
+            <!-- <img src="assets/images/hero-banner.png" alt=""> -->
         </section>
         <section class="grid-section">
             <!-- Photo Grid -->
